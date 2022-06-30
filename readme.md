@@ -28,13 +28,14 @@ cmake --build . --config Debug --target calc_fc calc_std calc_dynamic  --
 
 
 ## Features
-Three executables built:
- -  calc_fc using the fc library
- -  calc_std uses std::visit
- -  calc_dynamic uses hand made dynamic dispatch visitors
+Three executables are built:
+ 1.  calc_fc using the fc library
+ 2.  calc_std uses std::visit
+ 3.  calc_dynamic uses hand made dynamic dispatch visitors
 
 The canonical example here would be to create and visit an abstract syntax tree. However the grammar is so simple 
 
+```
 <expr> ::= <additive_expr>
 
 <additive_expr> ::= <multiplicative_expr> "+" <additive_expr>
@@ -42,24 +43,29 @@ The canonical example here would be to create and visit an abstract syntax tree.
 
 <multiplicative_expr> ::= <primary_expr> "*" <multiplicative_expr>
         |  <primary_expr>
+
 <primary_expr> ::= "(" <expr> ")"
         |  <number>
-<number> ::= integer
 
+<number> ::= integer
+```
 
 that the evaluation of expressions is performed while parsing.
 So to demonstrate visitors I used the token of the lexer as the visited object.
-The predicate like visitors answer the questions if the operation represented by the token is additive, multiplicative or it is a number. Also a sentinel is appended after tokenization to facilitate the ending condition of the subsequent parsing.
+The predicate like visitors answer the questions if the operation represented by the token is additive, multiplicative or it is a number. Also a sentinel is appended after tokenization to facilitate subsequent parsing.
 
 
 
 
-## TODO:
+#### TODO:
 
+
+-  headers in CMakelists.txt
 -  isolate from hive
 -  Boost Test
 -  CLI
 -  Docker
+-  cleanups: rename vis, separate file for vis and for token_assign, for print_implementation_used. get rid of difference and the like,         using result_type = bool out of std_implementation
 
 
 
