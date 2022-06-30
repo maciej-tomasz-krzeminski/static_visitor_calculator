@@ -1,0 +1,4 @@
+add_subdirectory(common)
+add_subdirectory(fc_implementation)
+add_subdirectory(std_implementation)
+add_subdirectory(dynamic_implementation)

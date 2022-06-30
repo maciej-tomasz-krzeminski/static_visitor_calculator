@@ -1,0 +1,5 @@
+add_library(std_implementation INTERFACE)
+target_include_directories(std_implementation INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include/std_implementation/)
+target_link_libraries(std_implementation INTERFACE common)
+install(TARGETS std_implementation DESTINATION lib)
+install(FILES visitors.hpp DESTINATION include)

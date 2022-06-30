@@ -1,0 +1,5 @@
+add_library(dynamic_implementation INTERFACE)
+target_include_directories(dynamic_implementation INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include/dynamic_implementation/)
+target_link_libraries(dynamic_implementation INTERFACE common)
+install(TARGETS dynamic_implementation DESTINATION lib)
+install(FILES visitors.hpp DESTINATION include)
