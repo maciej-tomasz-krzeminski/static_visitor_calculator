@@ -2,9 +2,8 @@
 #include "visitors.hpp"
 #include "parser.hpp"
 
-
 using namespace std::literals::string_literals;
-namespace static_variant_showcase
+namespace calcs
 {
 
     int Parser::parse_primary_expression()
@@ -71,7 +70,6 @@ namespace static_variant_showcase
         return Parser::parse_additive_epression();
     }
 
-    Parser::Parser(std::vector<token_t> a_tokens) :  tokens(std::move(a_tokens)){}
-
+    Parser::Parser(std::vector<token_t> a_tokens) : tokens(std::move(a_tokens)) {}
 
 }

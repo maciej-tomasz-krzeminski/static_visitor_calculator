@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <string>
 
-namespace static_variant_showcase
+namespace calcs
 {
 
 class CalcError : public std::runtime_error

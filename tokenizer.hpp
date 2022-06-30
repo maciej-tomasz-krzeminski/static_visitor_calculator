@@ -4,19 +4,18 @@
 #include <string>
 #include "token_types.hpp"
 
-namespace static_variant_showcase
+namespace calcs
 {
 
-class Tokenizer
-{
-public:
-    Tokenizer(const std::string &a_s) : s(a_s){}
+    class Tokenizer
+    {
+    public:
+        Tokenizer(const std::string &a_s) : s(a_s) {}
 
+        std::vector<token_t> tokenize(const std::string &str);
 
-    std::vector<token_t> tokenize(const std::string &str);
-
-private:
-    std::string s;
-};
+    private:
+        std::string s;
+    };
 
 }

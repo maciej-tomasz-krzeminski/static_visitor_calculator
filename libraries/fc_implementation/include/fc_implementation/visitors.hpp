@@ -1,23 +1,18 @@
 #pragma once
 
-
 #include "common/exceptions.hpp"
 #include "token_types.hpp"
 
-template<typename tokenT, typename visitorT>
+template <typename tokenT, typename visitorT>
 int vis(tokenT token, visitorT visitor)
 {
     return token.visit(visitor);
 }
 
-
-
 using namespace std::literals::string_literals;
 
-
-namespace static_variant_showcase
+namespace calcs
 {
-
 
     struct is_number_operation_visitor
     {
@@ -122,9 +117,8 @@ namespace static_variant_showcase
         int b;
     };
 
-    
-//TODO: presentration visitor printing which implementation is in force (fc, std or dynamic)
-//TODO boost.test
-//TODO - isolate from hive
+    // TODO: presentration visitor printing which implementation is in force (fc, std or dynamic)
+    // TODO boost.test
+    // TODO - isolate from hive
 
 }

@@ -3,19 +3,17 @@
 
 using namespace std::literals::string_literals;
 
-namespace static_variant_showcase
+namespace calcs
 {
 
-template<typename tokenT, typename visitorT>
-int vis(tokenT& token, visitorT visitor)
-{
-    
-    
-    number* n = dynamic_cast<number*>(token.get());
-    n = n;
-    return token->accept(visitor);
-}
+    template <typename tokenT, typename visitorT>
+    int vis(tokenT &token, visitorT visitor)
+    {
 
+        number *n = dynamic_cast<number *>(token.get());
+        n = n;
+        return token->accept(visitor);
+    }
 
     struct is_number_operation_visitor : public abstract_token_visitor
     {

@@ -3,18 +3,15 @@
 
 #include "token_types.hpp"
 
-
 using namespace std::literals::string_literals;
 
-
-template<typename tokenT, typename visitorT>
+template <typename tokenT, typename visitorT>
 int vis(tokenT token, visitorT visitor)
 {
     return std::visit(visitor, token);
 }
 
-
-namespace static_variant_showcase
+namespace calcs
 {
 
     struct is_number_operation_visitor
