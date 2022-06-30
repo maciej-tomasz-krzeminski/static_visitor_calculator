@@ -105,6 +105,5 @@ namespace calcs
     {
         tok_to_assign.reset(new tokenT(value));
     }
-    // TODO above func in other token_type - here at the end of header
 
 }
