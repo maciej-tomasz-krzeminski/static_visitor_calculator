@@ -11,7 +11,8 @@ https://gitlab.syncad.com/hive/hive/-/blob/develop/doc/building.md#building-on-u
 
 Then:
 
-```git clone https://github.com/openhive-network/hive
+```
+git clone https://github.com/openhive-network/hive
 cd hive
 git checkout master
 git submodule update --init --recursive
