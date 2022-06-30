@@ -4,7 +4,7 @@
 #include "token_types.hpp"
 
 template <typename tokenT, typename visitorT>
-int vis(tokenT token, visitorT visitor)
+int visitate(tokenT token, visitorT visitor)
 {
     return token.visit(visitor);
 }
@@ -116,6 +116,5 @@ namespace calcs
         int a;
         int b;
     };
-
 
 }

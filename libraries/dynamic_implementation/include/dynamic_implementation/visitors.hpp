@@ -7,11 +7,8 @@ namespace calcs
 {
 
     template <typename tokenT, typename visitorT>
-    int vis(tokenT &token, visitorT visitor)
+    int visitate(tokenT &token, visitorT visitor)
     {
-
-        number *n = dynamic_cast<number *>(token.get());
-        n = n;
         return token->accept(visitor);
     }
 

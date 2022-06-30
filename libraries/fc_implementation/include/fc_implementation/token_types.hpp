@@ -13,48 +13,18 @@ namespace calcs
 
     class add
     {
-    public:
-        add() : a(0), b(0) {}
-
-    private:
-        int a;
-        int b;
     };
 
     class subtract
     {
-    public:
-        subtract(int a_a, int b_b) : a(a_a), b(b_b) {}
-        subtract() : a(0), b(0) {}
-        int difference() { return a - b; }
-
-    private:
-        int a;
-        int b;
     };
 
     class multiply
     {
-    public:
-        multiply(int a_a, int b_b) : a(a_a), b(b_b) {}
-        multiply() : a(0), b(0) {}
-        int product() { return a * b; }
-
-    private:
-        int a;
-        int b;
     };
 
     class divide
     {
-    public:
-        divide(int a_a, int b_b) : a(a_a), b(b_b) {}
-        divide() : a(0), b(0) {}
-        int division() { return a / b; }
-
-    private:
-        int a;
-        int b;
     };
 
     class opening_parenthesis

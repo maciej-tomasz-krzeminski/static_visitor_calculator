@@ -6,7 +6,7 @@
 using namespace std::literals::string_literals;
 
 template <typename tokenT, typename visitorT>
-int vis(tokenT token, visitorT visitor)
+int visitate(tokenT token, visitorT visitor)
 {
     return std::visit(visitor, token);
 }
@@ -16,8 +16,6 @@ namespace calcs
 
     struct is_number_operation_visitor
     {
-        using result_type = bool;
-
         bool operator()(add arg) const { return false; }
         bool operator()(subtract arg) const { return false; }
         bool operator()(multiply arg) const { return false; }
@@ -31,8 +29,6 @@ namespace calcs
 
     struct is_open_parenthesis_visitor
     {
-        using result_type = bool;
-
         bool operator()(add arg) const { return false; }
         bool operator()(subtract arg) const { return false; }
         bool operator()(multiply arg) const { return false; }
@@ -46,8 +42,6 @@ namespace calcs
 
     struct is_close_parenthesis_visitor
     {
-        using result_type = bool;
-
         bool operator()(add arg) const { return false; }
         bool operator()(subtract arg) const { return false; }
         bool operator()(multiply arg) const { return false; }
@@ -61,8 +55,6 @@ namespace calcs
 
     struct is_multiplicative_operation_visitor
     {
-        using result_type = bool;
-
         bool operator()(add arg) const { return false; }
         bool operator()(subtract arg) const { return false; }
         bool operator()(multiply arg) const { return true; }
@@ -76,8 +68,6 @@ namespace calcs
 
     struct is_additive_operation_visitor
     {
-        using result_type = bool;
-
         bool operator()(add arg) const { return true; }
         bool operator()(subtract arg) const { return true; }
         bool operator()(multiply arg) const { return false; }
@@ -91,9 +81,7 @@ namespace calcs
 
     struct calculation_visitor
     {
-
         calculation_visitor(int a_a, int a_b) : a(a_a), b(a_b) {}
-        using result_type = int;
 
         int operator()(add arg) const { return a + b; }
         int operator()(subtract arg) const { return a - b; }

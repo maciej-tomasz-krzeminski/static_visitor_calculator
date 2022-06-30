@@ -61,11 +61,12 @@ The predicate like visitors answer the questions if the operation represented by
 
 
 -  headers in CMakelists.txt
--  isolate from hive
+-  isolate project from Hive
 -  Boost Test
+-  CTest a bit
 -  CLI
 -  Docker
--  cleanups: rename vis, separate file for vis and for token_assign, for print_implementation_used. get rid of difference and the like,         using result_type = bool out of std_implementation
+-  cleanups:  separate file for visitate and for token_assign, for print_implementation_used. get rid of difference and the like
 
 
 

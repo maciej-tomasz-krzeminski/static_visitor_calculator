@@ -9,18 +9,18 @@ namespace calcs
     int Parser::parse_primary_expression()
     {
 
-        if (vis(get_token(), is_number_operation_visitor()))
+        if (visitate(get_token(), is_number_operation_visitor()))
         {
             const token_t &token = get_token();
             eat_token();
             calculation_visitor calc_vo(0, 0);
-            return vis(token, calc_vo);
+            return visitate(token, calc_vo);
         }
-        else if (vis(get_token(), is_open_parenthesis_visitor()))
+        else if (visitate(get_token(), is_open_parenthesis_visitor()))
         {
             eat_token();
             int a = parse_additive_epression();
-            if (vis(get_token(), is_close_parenthesis_visitor()))
+            if (visitate(get_token(), is_close_parenthesis_visitor()))
             {
                 eat_token();
                 return a;
@@ -38,13 +38,13 @@ namespace calcs
     {
         int a = parse_primary_expression();
 
-        while (vis(get_token(), is_multiplicative_operation_visitor()))
+        while (visitate(get_token(), is_multiplicative_operation_visitor()))
         {
             const token_t &token = get_token();
             eat_token();
             int b = parse_primary_expression();
             calculation_visitor calc_vo(a, b);
-            a = vis(token, calc_vo);
+            a = visitate(token, calc_vo);
         }
         return a;
     }
@@ -53,13 +53,13 @@ namespace calcs
     {
         int a = parse_multiplicative_expression();
 
-        while (vis(get_token(), is_additive_operation_visitor()))
+        while (visitate(get_token(), is_additive_operation_visitor()))
         {
             const token_t &token = get_token();
             eat_token();
             int b = parse_multiplicative_expression();
             calculation_visitor calc_vo(a, b);
-            a = vis(token, calc_vo);
+            a = visitate(token, calc_vo);
         }
 
         return a;
