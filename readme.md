@@ -33,9 +33,33 @@ Three executables built:
  -  calc_std uses std::visit
  -  calc_dynamic uses hand made dynamic dispatch visitors
 
-The canonical example here would be to create and visit an abstract syntax tree, however the grammar is so simple that the evaluation of expressions is performed while parsing.
-So I used tokens of the lexer to be demonstrated as an example.
-The predicate like visitors answer the questions if the operation represented by the token is additive, multiplicative or it is a number. Also a sentinel is appended after tokenization  to facilitate the ending condition of the subsequent parsing. Parsing performs the actual arithmetic evaluations.
+The canonical example here would be to create and visit an abstract syntax tree. However the grammar is so simple 
+
+<expr> ::= <additive_expr>
+
+<additive_expr> ::= <multiplicative_expr> "+" <additive_expr>
+        |  <multiplicative_expr>
+
+<multiplicative_expr> ::= <primary_expr> "*" <multiplicative_expr>
+        |  <primary_expr>
+<primary_expr> ::= "(" <expr> ")"
+        |  <number>
+<number> ::= integer
+
+
+that the evaluation of expressions is performed while parsing.
+So to demonstrate visitors I used the token of the lexer as the visited object.
+The predicate like visitors answer the questions if the operation represented by the token is additive, multiplicative or it is a number. Also a sentinel is appended after tokenization to facilitate the ending condition of the subsequent parsing.
+
+
+
+
+## TODO:
+
+-  isolate from hive
+-  Boost Test
+-  CLI
+-  Docker
 
 
 

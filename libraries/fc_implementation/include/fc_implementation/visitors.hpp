@@ -117,8 +117,5 @@ namespace calcs
         int b;
     };
 
-    // TODO: presentration visitor printing which implementation is in force (fc, std or dynamic)
-    // TODO boost.test
-    // TODO - isolate from hive
 
 }
