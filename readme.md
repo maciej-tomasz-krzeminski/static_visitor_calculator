@@ -1,16 +1,9 @@
+## Goal
+
+An excercise to implement a simple calculator demonstrating static and dynamic visitor patterns.
 
 
-
-
-
-
-
-
-
-Because the actual parser syntax tree structure is not created I'm showing ***static_variant*** on the token class.
-
-
-###Build indtructions###
+## Build indtructions
 
 
 See the requirements for hive:
@@ -18,7 +11,7 @@ https://gitlab.syncad.com/hive/hive/-/blob/develop/doc/building.md#building-on-u
 
 Then:
 
-git clone https://github.com/openhive-network/hive
+```git clone https://github.com/openhive-network/hive
 cd hive
 git checkout master
 git submodule update --init --recursive
@@ -30,7 +23,10 @@ mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build . --config Debug --target calc_fc calc_std calc_dynamic  --
+```
 
+
+## Features
 There are 3 executables built. calc_fc using the fc library. CalStd uses std::visit and calc_dynamic uses hand made dynamic dispatch visitors.
 The canonical example here would be to create and visit an abstract syntax tree, however the grammar is so simple that the evaluation of expressions is performed while parsing.
 So I used tokens of the lexer to be demonstrated as an example.
