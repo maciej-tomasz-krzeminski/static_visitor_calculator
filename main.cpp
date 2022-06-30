@@ -19,7 +19,7 @@ namespace calcs
         try
         {
             auto container = tokenizer.tokenize(s);
-            auto calulation_result = Parser(std::move(container)).parse(); // TODO - eliminate move as it is rvalue already
+            auto calulation_result = Parser(std::move(container)).parse();
             return std::to_string(calulation_result);
         }
         catch (const std::exception &e) // TODO - particlar exceptions here, not everyting
