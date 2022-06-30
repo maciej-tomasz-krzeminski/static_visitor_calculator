@@ -51,8 +51,8 @@ The canonical example here would be to create and visit an abstract syntax tree.
 ```
 
 that the evaluation of expressions is performed while parsing.
-So to demonstrate visitors I used the token of the lexer as the visited object.
-The predicate like visitors answer the questions if the operation represented by the token is additive, multiplicative or it is a number. Also a sentinel is appended after tokenization to facilitate subsequent parsing.
+So to demonstrate visitors I used the token of the lexer as the visited object. An artificial token -sentinel is appended after tokenization to facilitate subsequent parsing. 
+The predicate like visitors answer the questions if the operation represented by the token is additive, multiplicative or it is a number. The calulation proper visitor is there as well. 
 
 
 
