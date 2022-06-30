@@ -29,9 +29,9 @@ cmake --build . --config Debug --target calc_fc calc_std calc_dynamic  --
 
 ## Features
 Three executables built:
- -calc_fc using the fc library
- -calc_std uses std::visit
- -calc_dynamic uses hand made dynamic dispatch visitors
+ -  calc_fc using the fc library
+ -  calc_std uses std::visit
+ -  calc_dynamic uses hand made dynamic dispatch visitors
 
 The canonical example here would be to create and visit an abstract syntax tree, however the grammar is so simple that the evaluation of expressions is performed while parsing.
 So I used tokens of the lexer to be demonstrated as an example.
