@@ -1,12 +1,10 @@
 #pragma once
 
 #include <vector>
-
 #include "token_types.hpp"
 
 namespace calcs
 {
-
     class Parser
     {
     public:

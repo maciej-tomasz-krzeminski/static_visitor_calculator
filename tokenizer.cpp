@@ -46,7 +46,7 @@ namespace calcs
                 if (std::isdigit(s[0]))
                     token_assign(tok, number(std::stoi(s)));
                 else
-                    throw CalcError("Unexpected token "s + s[0]);
+                    throw CalcError("Lexer error: unexpected token "s + s[0]);
             }
             tokens.push_back(std::move(tok));
         }

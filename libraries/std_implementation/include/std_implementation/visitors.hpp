@@ -6,7 +6,7 @@
 using namespace std::literals::string_literals;
 
 template <typename tokenT, typename visitorT>
-int visitate(tokenT token, visitorT visitor)
+int visitate(tokenT token, visitorT visitor)// TODO - first template type unnecessary ?
 {
     return std::visit(visitor, token);
 }
@@ -89,7 +89,7 @@ namespace calcs
         int operator()(divide arg) const
         {
             if (b == 0)
-                throw CalcError("Error division by zero"s);
+                throw CalcError("Arithmetic error: division by zero"s);
 
             return a / b;
         }

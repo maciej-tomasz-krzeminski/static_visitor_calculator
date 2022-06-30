@@ -61,12 +61,15 @@ The predicate like visitors answer the questions if the operation represented by
 
 
 -  headers in CMakelists.txt
+-  installing targets in cmake
+-  3 executables have the same all toplevel files. Executables differ only by low level implementation. Introduce a common library to remove the duplication in build
 -  isolate project from Hive
 -  Boost Test
 -  CTest a bit
 -  CLI
 -  Docker
--  cleanups:  separate file for visitate and for token_assign, for print_implementation_used. get rid of difference and the like
+-  cleanups:  separate file for visitate and for token_assign, for print_implementation_used. 
+-  .clang-format
 
 
 

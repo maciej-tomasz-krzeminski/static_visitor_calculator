@@ -88,7 +88,7 @@ namespace calcs
         int operator()(divide arg) const override
         {
             if (b == 0)
-                throw CalcError("Error division by zero"s);
+                throw CalcError("Arithmetic error: division by zero"s);
 
             return a / b;
         }

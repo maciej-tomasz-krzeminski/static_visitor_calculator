@@ -4,7 +4,7 @@
 #include "tokenizer.hpp"
 #include "parser.hpp"
 
-#define asser1(arg) assert(arg)
+#define ASSERT(arg) assert(arg)
 
 namespace calcs
 {
@@ -32,21 +32,21 @@ namespace calcs
     void test_first()
     {
         print_implementation_used();
-        asser1("Error empty input" == calc(""));
-        asser1("2" == calc("2"));
-        asser1("3" == calc("3"));
-        asser1("4" == calc(" 4 "));
-        asser1("5" == calc("2+3"));
-        asser1("7" == calc("2 + 5"));
-        asser1("3" == calc("4-1"));
-        asser1("15" == calc("5*3"));
-        asser1("4" == calc("16/4"));
-        asser1("55" == calc("7*8+ (3-4)"));
-        asser1("Error division by zero" == calc("4/0"));
-        asser1("Syntax error: missing parenthesis or number" == calc("()"));
-        asser1("Syntax error: Missing closing parenthesis" == calc("2*(3+4"));
-        // asser1("Syntax error: Missing closing parenthesis" == calc("2*)3+4")); TODO - unexpected token
-        // asser1("Syntax error: Missing closing parenthesis" == calc("2*^3+4")); TODO - unexpected token
+        ASSERT("Error empty input" == calc(""));
+        ASSERT("2" == calc("2"));
+        ASSERT("3" == calc("3"));
+        ASSERT("4" == calc(" 4 "));
+        ASSERT("5" == calc("2+3"));
+        ASSERT("7" == calc("2 + 5"));
+        ASSERT("3" == calc("4-1"));
+        ASSERT("15" == calc("5*3"));
+        ASSERT("4" == calc("16/4"));
+        ASSERT("55" == calc("7*8+ (3-4)"));
+        ASSERT("Arithmetic error: division by zero" == calc("4/0"));
+        ASSERT("Syntax error: missing parenthesis or number" == calc("()"));
+        ASSERT("Syntax error: Missing closing parenthesis" == calc("2*(3+4"));
+        // ASSERT("Syntax error: Missing closing parenthesis" == calc("2*)3+4")); TODO - unexpected token
+        // ASSERT("Syntax error: Missing closing parenthesis" == calc("2*^3+4")); TODO - unexpected token
     }
 }
 

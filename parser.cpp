@@ -8,7 +8,6 @@ namespace calcs
 
     int Parser::parse_primary_expression()
     {
-
         if (visitate(get_token(), is_number_operation_visitor()))
         {
             const token_t &token = get_token();
@@ -61,7 +60,6 @@ namespace calcs
             calculation_visitor calc_vo(a, b);
             a = visitate(token, calc_vo);
         }
-
         return a;
     }
 
