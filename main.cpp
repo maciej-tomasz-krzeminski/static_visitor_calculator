@@ -1,6 +1,7 @@
 #include <string>
 #include <cassert>
 
+#include "common/exceptions.hpp"
 #include "tokenizer.hpp"
 #include "parser.hpp"
 
@@ -22,7 +23,7 @@ namespace calcs
             auto calulation_result = Parser(std::move(container)).parse();
             return std::to_string(calulation_result);
         }
-        catch (const std::exception &e) // TODO - particlar exceptions here, not everyting
+        catch (const CalcError &e)
         {
             std::string s = e.what();
             return s;
@@ -45,7 +46,7 @@ namespace calcs
         ASSERT("Arithmetic error: division by zero" == calc("4/0"));
         ASSERT("Syntax error: missing parenthesis or number" == calc("()"));
         ASSERT("Syntax error: Missing closing parenthesis" == calc("2*(3+4"));
-        ASSERT("Syntax error: missing parenthesis or number" == calc("2*)3+4"));
+        ASSERT("Syntax error: missing parenthesis or number" == calc("2*)3+4")); //TODO unbalanced paretheses
         ASSERT("Lexer error: unexpected token ^" == calc("2*^3+4"));
     }
 }
