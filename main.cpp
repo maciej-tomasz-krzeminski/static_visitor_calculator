@@ -45,8 +45,8 @@ namespace calcs
         ASSERT("Arithmetic error: division by zero" == calc("4/0"));
         ASSERT("Syntax error: missing parenthesis or number" == calc("()"));
         ASSERT("Syntax error: Missing closing parenthesis" == calc("2*(3+4"));
-        // ASSERT("Syntax error: Missing closing parenthesis" == calc("2*)3+4")); TODO - unexpected token
-        // ASSERT("Syntax error: Missing closing parenthesis" == calc("2*^3+4")); TODO - unexpected token
+        ASSERT("Syntax error: missing parenthesis or number" == calc("2*)3+4"));
+        ASSERT("Lexer error: unexpected token ^" == calc("2*^3+4"));
     }
 }
 

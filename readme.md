@@ -31,7 +31,7 @@ cmake --build . --config Debug --target calc_fc calc_std calc_dynamic  --
 Three executables are built:
  1.  calc_fc using the fc library
  2.  calc_std uses std::visit
- 3.  calc_dynamic uses hand made dynamic dispatch visitors
+ 3.  calc_dynamic uses hand made dynamic dispatch visitors. Normally they don't return a value but here we have return values as integers so booleans are covered as ints.
 
 The canonical example here would be to create and visit an abstract syntax tree. However the grammar is so simple 
 

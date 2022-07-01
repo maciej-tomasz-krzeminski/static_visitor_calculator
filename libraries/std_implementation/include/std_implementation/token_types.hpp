@@ -53,7 +53,7 @@ namespace calcs
     using token_t = std::variant<add, subtract, multiply, divide, number, opening_parenthesis, closing_parenthesis, iteration_sentinel>;
 
     template <typename lefttokenT, typename righttokenT>
-    void token_assign(lefttokenT &tok, righttokenT value)
+    void token_assign(lefttokenT& tok, righttokenT value)
     {
         tok = value;
     }

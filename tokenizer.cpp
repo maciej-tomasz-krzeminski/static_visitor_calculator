@@ -25,7 +25,8 @@ namespace calcs
             switch (s[0])
             {
             case '+':
-                token_assign(tok, add()); // TODO it is enough to pass just type of token, no need to construct one
+                token_assign(tok, add());   // TODO new it is enough to pass just type of token, no need to construct one, but requires new token_assign version. 
+                                            // Perhaps optimizer will eliminate unnecessary construction anyway , so no need for that ?
                 break;
             case '-':
                 token_assign(tok, subtract());
